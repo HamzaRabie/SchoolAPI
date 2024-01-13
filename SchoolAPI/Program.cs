@@ -48,6 +48,7 @@ namespace SchoolAPI
                     ValidateAudience = true,
                     ValidAudience = builder.Configuration["JWT:ValidAud"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecrytKey"])),
+
                 };
             });
 

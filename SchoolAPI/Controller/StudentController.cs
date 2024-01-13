@@ -52,14 +52,14 @@ namespace SchoolAPI.Controller
         */
 
         [Authorize(Roles=Roles.Student)]
-        [HttpPost("Update")]
+        [HttpPut("Update")]
         public async Task<IActionResult> UpdateStudentAsync(int id , RegisterUserDTO newStudent)
         {
             return Ok(await student.UpdateStudent(id , newStudent));
         }
 
         [Authorize(Roles = Roles.Admin)]
-        [HttpPost("Delete")]
+        [HttpDelete("Delete")]
         public async Task<IActionResult> DeleteStudentAsync(int id)
         {
             return Ok(await student.DeleteStudent(id));

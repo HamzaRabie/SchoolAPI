@@ -47,7 +47,7 @@ namespace SchoolAPI.Controller
         }
 
         [Authorize(Roles = Roles.Admin)]
-        [HttpPost("UpdateCourse")]
+        [HttpPut("UpdateCourse")]
         public async Task<IActionResult> UpdateCourseAsync (int id , CourseDTO newCourse )
         {
             if (ModelState.IsValid)
@@ -60,7 +60,7 @@ namespace SchoolAPI.Controller
         }
 
         [Authorize(Roles = Roles.Admin)]
-        [HttpPost("Delete")]
+        [HttpDelete("Delete")]
         public async Task<IActionResult> DeleteCourseAsync (int id)
         {
             return Ok( await course.DeleteCourse(id) );
